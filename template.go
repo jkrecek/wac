@@ -22,7 +22,7 @@ func (container *StaticContainer) renderTemplate(w http.ResponseWriter, tmpl str
 	}
 
 	buffer := new(bytes.Buffer)
-	err := container.templates.ExecuteTemplate(buffer, tmpl + ".html", data)
+	err := container.templates.ExecuteTemplate(buffer, tmpl+".html", data)
 	if err != nil {
 		log.Println("Cannot execute", err)
 	}

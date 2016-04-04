@@ -5,20 +5,19 @@ import "html/template"
 type StaticContainer struct {
 	assetsCompilers []AssetCompiler
 	pathToStaticDir string
-	isDebugMode bool
-	templates *template.Template
+	isDebugMode     bool
+	templates       *template.Template
 }
 
 var (
 	container *StaticContainer = nil
 )
 
-
 func CreateStaticContainer(assetsCompilers []AssetCompiler, pathToStaticDir string) *StaticContainer {
 	container = &StaticContainer{
 		assetsCompilers: assetsCompilers,
 		pathToStaticDir: pathToStaticDir,
-		isDebugMode: false,
+		isDebugMode:     false,
 	}
 
 	container.loadCompiledTemplates()

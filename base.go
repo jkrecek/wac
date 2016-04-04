@@ -21,7 +21,7 @@ func AssetsHandler(w http.ResponseWriter, r *http.Request) {
 	assetType := vars["type"]
 
 	output, contentType := container.AssetCompile(assetType)
-	w.Header().Set("Content-Type", contentType + "; charset=utf-8")
+	w.Header().Set("Content-Type", contentType+"; charset=utf-8")
 	w.Header().Set("Cache-Control", "private, max-age=600")
 
 	if container.isDebugMode {
